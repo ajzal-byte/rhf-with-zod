@@ -17,13 +17,3 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  align-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
