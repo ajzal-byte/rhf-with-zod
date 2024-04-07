@@ -1,5 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
-import { TraditionalForm } from "./components";
+import { ReactHookForm, TraditionalForm } from "./components";
 import "./App.css"
 
 const App = () => {
@@ -7,12 +7,13 @@ const App = () => {
     <>
       <div className="links">
       <Link to="/traditional">Traditional Form</Link>
-      <Link to="/traditional">React Hook Form</Link>
-      <Link to="/traditional">React Hook Form with Zod</Link>
+      <Link to="/rhf">React Hook Form</Link>
+      <Link to="/">React Hook Form with Zod</Link>
       </div>
 
       <Routes>
         <Route path="/traditional" element={<TraditionalForm />} />
+        <Route path="/rhf" element={<ReactHookForm />} />
       </Routes>
     </>
   );

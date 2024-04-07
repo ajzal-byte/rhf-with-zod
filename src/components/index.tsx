@@ -1,3 +1,4 @@
 import TraditionalForm from "./TraditionalForm";
+import ReactHookForm from "./ReactHookForm";
 
-export { TraditionalForm };
+export { TraditionalForm, ReactHookForm };
