@@ -5,9 +5,11 @@ export default function TraditionalForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setErrors([])
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -19,12 +21,14 @@ export default function TraditionalForm() {
 
     // TODO: submit to server
     // ...
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setIsSubmitted(true);
     setEmail("");
     setPassword("");
     setConfirmPassword("");
     setIsSubmitting(false);
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    setIsSubmitted(false);
   };
 
   return (
@@ -40,6 +44,11 @@ export default function TraditionalForm() {
             </li>
           ))}
         </ul>
+      )}
+      {isSubmitted && (
+          <div className="bg-green-100 text-green-500 px-4 py-2 rounded">
+            Your form is submitted
+          </div>
       )}
       <input
         value={email}
